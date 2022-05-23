@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Computer Advisor</title>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <body class="bg-gray-200">
+        <nav class="p-6 bg-white flex justify-between mb-6">
+            <ul class="flex items-center">
+                <li>
+                    <a href="/" class="p-3">Home</a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
+                </li>
+                <li>
+                    <a href="{{ route('posts') }}" class="p-3">Posts</a>
+                </li>
+            </ul>
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+            <ul class="flex items-center">
+                @auth
+                    <li>
+                        <a href="" class="p-3">{{ auth()->user()->name }}</a>
+                    </li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="post" class="p-3 inline">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                @endauth
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+                @guest
+                    <li>
+                        <a href="{{ route('login') }}" class="p-3">Login</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('register') }}" class="p-3">Register</a>
+                    </li>
+                @endguest
+            </ul>
+        </nav>
+        @yield('content')
     </body>
 </html>
