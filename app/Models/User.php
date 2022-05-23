@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'username',
+        'is_advisor'
     ];
 
     /**
@@ -48,13 +49,23 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function likes()
+    public function announcements()
     {
-        return $this->hasMany(Like::class);
+        return $this->hasMany(Announcement::class);
     }
 
-    public function receivedLikes()
+    public function recommendations()
     {
-        return $this->hasManyThrough(Like::class, Post::class);
+        return $this->hasMany(Recommendation::class);
+    }
+
+    public function troubleshootings()
+    {
+        return $this->hasMany(Troubleshooting::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

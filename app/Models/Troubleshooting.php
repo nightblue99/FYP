@@ -2,31 +2,23 @@
 
 namespace App\Models;
 
-use App\Models\Like;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Troubleshooting extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'title',
-        'content'
+        'problem _title',
+        'problem_content',
+        'solution',
+        'video_url' 
     ];
-
-   
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
-
-    
 }
