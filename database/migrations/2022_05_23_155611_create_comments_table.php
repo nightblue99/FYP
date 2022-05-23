@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSoftDeletesToLikesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddSoftDeletesToLikesTable extends Migration
      */
     public function up()
     {
-        Schema::table('likes', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('post_id');
+            $table->foreignId('user_id');
+            $table->text('content');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddSoftDeletesToLikesTable extends Migration
      */
     public function down()
     {
-        Schema::table('likes', function (Blueprint $table) {
-            $table->dropSoftDeletes();
-        });
+        Schema::dropIfExists('comments');
     }
-}
+};
