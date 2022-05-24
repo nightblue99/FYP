@@ -33,6 +33,7 @@ class RegisterController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'is_advisor' => 0
         ]);
 
         auth()->attempt($request->only('email', 'password'));

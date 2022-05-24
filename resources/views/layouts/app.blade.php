@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,16 @@
                     <a href="/" class="p-3">Home</a>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
+                    <a href="{{ route('anouncement') }}" class="p-3">Anouncement</a>
                 </li>
                 <li>
+                    <a href="{{ route('recommendation') }}" class="p-3">Recommendation</a>
+                </li>
+                <li>
+                    <a href="{{ route('troubleshooting') }}" class="p-3">Troubleshooting</a>
+                </li>
+
+                 <li>
                     <a href="{{ route('posts') }}" class="p-3">Posts</a>
                 </li>
             </ul>
