@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\RecommendationController;
 use App\Http\Controllers\TroubleshootingController;
-use App\Http\Controllers\AnouncementController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +49,11 @@ Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])->name('
 Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->name('posts.likes');
 
 Route::get('/recommendation', [RecommendationController::class, 'index'])->name('recommendation');
+Route::get('/recommendation/list', [RecommendationController::class, 'list'])->name('recommendation.list');
+Route::get('/recommendation/create', [RecommendationController::class, 'create'])->name('recommendation.create');
 
 
 Route::get('/troubleshooting', [TroubleshootingController::class, 'index'])->name('troubleshooting');
 
-Route::get('/anouncement', [AnouncementController::class, 'index'])->name('anouncement');
+Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement');
+Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create');

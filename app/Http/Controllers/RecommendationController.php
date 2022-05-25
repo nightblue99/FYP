@@ -16,6 +16,11 @@ class RecommendationController extends Controller
         return view('recommendation.index');
     }
 
+    public function list()
+    {
+        return view('recommendation.list');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -23,7 +28,7 @@ class RecommendationController extends Controller
      */
     public function create()
     {
-        //
+        return view('recommendation.create');
     }
 
     /**

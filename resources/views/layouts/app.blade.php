@@ -15,7 +15,7 @@
                     <a href="/" class="p-3">Home</a>
                 </li>
                 <li>
-                    <a href="{{ route('anouncement') }}" class="p-3">Anouncement</a>
+                    <a href="{{ route('announcement') }}" class="p-3">Announcement</a>
                 </li>
                 <li>
                     <a href="{{ route('recommendation') }}" class="p-3">Recommendation</a>
