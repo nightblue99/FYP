@@ -28,7 +28,7 @@
               <div class="card w-100 bg-base-100 shadow-xl px-8 m-4 ">
                 <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
                 <div class="card-body">
-                  <h2 class="card-title">Choose Categoty!</h2>
+                  <h2 class="card-title">Choose Category!</h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>
                   <div class="card-actions justify-end">
                     <select class="select select-bordered w-full max-w-xs">

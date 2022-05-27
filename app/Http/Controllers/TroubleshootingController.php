@@ -23,7 +23,7 @@ class TroubleshootingController extends Controller
      */
     public function create()
     {
-        //
+        return view('troubleshooting.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class TroubleshootingController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('troubleshooting.show');
     }
 
     /**

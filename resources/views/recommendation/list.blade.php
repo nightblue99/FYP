@@ -48,7 +48,7 @@
                       </td>
                       <td>Purple</td>
                       <th>
-                        <button class="btn btn-ghost btn-xs">details</button>
+                        <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
                       </th>
                     </tr>
                     <!-- row 2 -->
@@ -78,7 +78,7 @@
                       </td>
                       <td>Red</td>
                       <th>
-                        <button class="btn btn-ghost btn-xs">details</button>
+                        <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
                       </th>
                     </tr>
                     <!-- row 3 -->
@@ -108,7 +108,7 @@
                       </td>
                       <td>Crimson</td>
                       <th>
-                        <button class="btn btn-ghost btn-xs">details</button>
+                        <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
                       </th>
                     </tr>
                     <!-- row 4 -->
@@ -138,7 +138,7 @@
                       </td>
                       <td>Indigo</td>
                       <th>
-                        <button class="btn btn-ghost btn-xs">details</button>
+                        <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
                       </th>
                     </tr>
                   </tbody>
@@ -155,6 +155,8 @@
 
                 </table>
               </div>
+              <a class="btn btn-primary m-10 "href="{{ route('recommendation.create') }} ">Add new product</a>
         </div>
+
     </div>
 @endsection

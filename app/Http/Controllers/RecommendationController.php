@@ -50,7 +50,7 @@ class RecommendationController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('recommendation.show');
     }
 
     /**

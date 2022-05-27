@@ -51,9 +51,12 @@ Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->na
 Route::get('/recommendation', [RecommendationController::class, 'index'])->name('recommendation');
 Route::get('/recommendation/list', [RecommendationController::class, 'list'])->name('recommendation.list');
 Route::get('/recommendation/create', [RecommendationController::class, 'create'])->name('recommendation.create');
+Route::get('/recommendation/{recommendation}', [RecommendationController::class, 'show'])->name('recommendation.show');
 
 
 Route::get('/troubleshooting', [TroubleshootingController::class, 'index'])->name('troubleshooting');
+Route::get('/troubleshooting/create', [TroubleshootingController::class, 'create'])->name('troubleshooting.create');
+Route::get('/troubleshooting/{troubleshooting}', [TroubleshootingController::class, 'show'])->name('troubleshooting.show');
 
 Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement');
 Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create');
