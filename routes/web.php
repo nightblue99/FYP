@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\PostLikeController;
-use App\Http\Controllers\UserPostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -30,8 +28,6 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
 
-Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
-
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -45,14 +41,11 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 Route::post('/posts', [PostController::class, 'store']);
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])->name('posts.likes');
-Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->name('posts.likes');
-
 Route::get('/recommendation', [RecommendationController::class, 'index'])->name('recommendation');
 Route::get('/recommendation/list', [RecommendationController::class, 'list'])->name('recommendation.list');
 Route::get('/recommendation/create', [RecommendationController::class, 'create'])->name('recommendation.create');
 Route::get('/recommendation/{recommendation}', [RecommendationController::class, 'show'])->name('recommendation.show');
-
+Route::post('/recommendation', [RecommendationController::class, 'store'])->name('recommendation.store');
 
 Route::get('/troubleshooting', [TroubleshootingController::class, 'index'])->name('troubleshooting');
 Route::get('/troubleshooting/create', [TroubleshootingController::class, 'create'])->name('troubleshooting.create');
@@ -60,3 +53,4 @@ Route::get('/troubleshooting/{troubleshooting}', [TroubleshootingController::cla
 
 Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement');
 Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create');
+Route::post('/announcement', [AnnouncementController::class, 'store'])->name('announcement.store');

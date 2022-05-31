@@ -4,6 +4,8 @@
     <div class="flex justify-center">
         <div class="w-10/12 bg-white p-6 rounded-lg">
             Add Announcement
+            <form action="{{ route('announcement.store') }}" method="POST">
+                @csrf
             <div class="form-control">
                 <label class="label">
                   <span class="label-text"></span>
@@ -32,7 +34,7 @@
                   "/>
                 </label>
               </form>
-              <button class="btn btn-outline">Submit</button>
+              <br><input class="btn mt-3" type="submit">
         </div>
 
     </div>

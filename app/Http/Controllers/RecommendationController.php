@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Recommendation;
 
 class RecommendationController extends Controller
 {
@@ -18,7 +19,8 @@ class RecommendationController extends Controller
 
     public function list()
     {
-        return view('recommendation.list');
+        $recommendations= Recommendation::all();
+        return view('recommendation.list', compact('recommendations'));
     }
 
     /**
@@ -39,7 +41,24 @@ class RecommendationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'description' => 'required|string|max:255',
+        //     'specification' => 'required|string|max:255',
+        //     'image' => 'mimes:png,jpg,jpeg,pdf|max:2048',
+        //     'category' =>'required',
+        //     'usage' =>'required',
+        // ]);
+
+        $recommendation = Recommendation::create([
+            'user_id' => 0,
+            'description' => $request->description,
+            'specification' => $request->specification,
+            'image' => $request->image,
+            'category' => $request->category,
+            'usage' => $request->usage,
+        ]);
+
+        return redirect()->route('recommendation.show', ['recommendation' => $recommendation]);
     }
 
     /**
@@ -50,7 +69,9 @@ class RecommendationController extends Controller
      */
     public function show($id)
     {
-        return view('recommendation.show');
+        $recommendation= Recommendation::find($id);
+        return view('recommendation.show',compact('recommendation'));
+
     }
 
     /**

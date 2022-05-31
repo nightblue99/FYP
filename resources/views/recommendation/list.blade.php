@@ -21,7 +21,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- row 1 -->
+                    @if ($recommendations !=null)
+                     @foreach ($recommendations as $recommendation)
                     <tr>
                       <th>
                         <label>
@@ -36,13 +37,13 @@
                             </div>
                           </div>
                           <div>
-                            <div class="font-bold">Hart Hagerty</div>
+                            <div class="font-bold"> {{$recommendation->description}}</div>
                             <div class="text-sm opacity-50">United States</div>
                           </div>
                         </div>
                       </td>
                       <td>
-                        Zemlak, Daniel and Leannon
+                        <div class="font-bold"> {{$recommendation->specification}}</div>
                         <br>
                         <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
                       </td>
@@ -51,96 +52,8 @@
                         <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
                       </th>
                     </tr>
-                    <!-- row 2 -->
-                    <tr>
-                      <th>
-                        <label>
-                          <input type="checkbox" class="checkbox" />
-                        </label>
-                      </th>
-                      <td>
-                        <div class="flex items-center space-x-3">
-                          <div class="avatar">
-                            <div class="mask mask-squircle w-12 h-12">
-                              <img src="/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
-                            </div>
-                          </div>
-                          <div>
-                            <div class="font-bold">Brice Swyre</div>
-                            <div class="text-sm opacity-50">China</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        Carroll Group
-                        <br>
-                        <span class="badge badge-ghost badge-sm">Tax Accountant</span>
-                      </td>
-                      <td>Red</td>
-                      <th>
-                        <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
-                      </th>
-                    </tr>
-                    <!-- row 3 -->
-                    <tr>
-                      <th>
-                        <label>
-                          <input type="checkbox" class="checkbox" />
-                        </label>
-                      </th>
-                      <td>
-                        <div class="flex items-center space-x-3">
-                          <div class="avatar">
-                            <div class="mask mask-squircle w-12 h-12">
-                              <img src="/tailwind-css-component-profile-4@56w.png" alt="Avatar Tailwind CSS Component" />
-                            </div>
-                          </div>
-                          <div>
-                            <div class="font-bold">Marjy Ferencz</div>
-                            <div class="text-sm opacity-50">Russia</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        Rowe-Schoen
-                        <br>
-                        <span class="badge badge-ghost badge-sm">Office Assistant I</span>
-                      </td>
-                      <td>Crimson</td>
-                      <th>
-                        <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
-                      </th>
-                    </tr>
-                    <!-- row 4 -->
-                    <tr>
-                      <th>
-                        <label>
-                          <input type="checkbox" class="checkbox" />
-                        </label>
-                      </th>
-                      <td>
-                        <div class="flex items-center space-x-3">
-                          <div class="avatar">
-                            <div class="mask mask-squircle w-12 h-12">
-                              <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
-                            </div>
-                          </div>
-                          <div>
-                            <div class="font-bold">Yancy Tear</div>
-                            <div class="text-sm opacity-50">Brazil</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        Wyman-Ledner
-                        <br>
-                        <span class="badge badge-ghost badge-sm">Community Outreach Specialist</span>
-                      </td>
-                      <td>Indigo</td>
-                      <th>
-                        <a class="btn btn-ghost btn-xs" href="{{ route('recommendation.show', ['recommendation'=>1]) }} ">details</a>
-                      </th>
-                    </tr>
+                    @endforeach
+                   @endif
                   </tbody>
                   <!-- foot -->
                   <tfoot>

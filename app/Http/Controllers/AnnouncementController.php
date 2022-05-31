@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Announcement;
 
 class AnnouncementController extends Controller
 {
@@ -13,7 +14,8 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        return view('announcement.index');
+        $announcements= Announcement::all();
+        return view('announcement.index', compact('announcements'));
     }
 
     /**
@@ -34,7 +36,15 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $announcement = Announcement::create([
+            'user_id' =>0,
+            'title' => $request->title,
+            'description' => $request->description,
+            'content' => $request->content,
+            'image' => $request->image,
+        ]);
+
+        return redirect()->route('announcement.index');
     }
 
     /**

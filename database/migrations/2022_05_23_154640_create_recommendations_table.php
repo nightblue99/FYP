@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->text('specification');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->text('description');
             $table->enum('category',['laptop','desktop']);
             $table->enum('usage',['work','gaming','multimedia']);
