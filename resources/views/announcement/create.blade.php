@@ -12,14 +12,18 @@
                 </label>
                 <label class="input-group py-8">
                   <span>Announcement </span>
-                  <input type="text" placeholder="Title" class="input input-bordered" />
+                  <input name="title" type="text" placeholder="Title" class="input input-bordered" />
                 </label>
             </label>
             <label class="input-group py-8">
               <span>Description</span>
-              <input type="text" placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs" />
+              <input name="description" type="text" placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs" />
               </div>
-              <form class="flex items-center space-x-6 py-8">
+              <label class="input-group py-8">
+                <span>Content </span>
+                <input name="content" type="text" placeholder="Title" class="input input-bordered" />
+              </label>
+              <div class="flex items-center space-x-6 py-8">
                 <div class="shrink-0">
                   <img class="h-16 w-16 object-cover rounded-full" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80" alt="Current profile photo" />
                 </div>
@@ -33,8 +37,9 @@
                     hover:file:bg-violet-100
                   "/>
                 </label>
+                <br><input class="btn mt-3" type="submit">
               </form>
-              <br><input class="btn mt-3" type="submit">
+
         </div>
 
     </div>

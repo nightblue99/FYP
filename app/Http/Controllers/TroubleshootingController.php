@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Troubleshooting;
 
 class TroubleshootingController extends Controller
 {
@@ -16,6 +17,11 @@ class TroubleshootingController extends Controller
         return view('troubleshooting.index');
     }
 
+    public function list()
+    {
+        $troubleshooting= Troubleshooting::all();
+        return view('troubleshooting.list', compact('troubleshooting'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +40,15 @@ class TroubleshootingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $troubleshooting = Troubleshooting::create([
+            'user_id' => 0,
+            'problem_title' => $request->problem_title,
+            'problem_content'=>$request->problem_content,
+            'solutions'=>$request->solutions,
+            'video_url'=>$request->video_url,
+        ]);
+
+        return redirect()->route('troubleshooting');
     }
 
     /**
@@ -45,7 +59,8 @@ class TroubleshootingController extends Controller
      */
     public function show($id)
     {
-        return view('troubleshooting.show');
+        $troubleshooting= Troubleshooting::find($id);
+        return view('troubleshooting.show',compact('troubleshooting'));
     }
 
     /**

@@ -10,7 +10,8 @@
                   Focus me to see content
                 </div>
                 <div class="collapse-content">
-                  <p>tabindex="0" attribute is necessary to make the div focusable</p>
+                  <p>{{$troubleshooting->content}}</p>
+                  <p>{{$troubleshooting->solutions}}</p>
                 </div>
               </div>
         </div>

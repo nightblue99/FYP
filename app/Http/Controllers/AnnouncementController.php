@@ -44,7 +44,7 @@ class AnnouncementController extends Controller
             'image' => $request->image,
         ]);
 
-        return redirect()->route('announcement.index');
+        return redirect()->route('announcement');
     }
 
     /**

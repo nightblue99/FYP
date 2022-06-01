@@ -11,10 +11,10 @@ class Troubleshooting extends Model
 
     protected $fillable = [
         'user_id',
-        'problem _title',
+        'problem_title',
         'problem_content',
-        'solution',
-        'video_url' 
+        'solutions',
+        'video_url'
     ];
 
     public function user()

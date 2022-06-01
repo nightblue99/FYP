@@ -4,25 +4,26 @@
     <div class="flex justify-center">
         <div class="w-8/12 bg-white p-6 rounded-lg">
             Adding Problem
-
+            <form action="{{ route('troubleshooting.store') }}" method="POST">
+                @csrf
             <div class="form-control">
                 <label class="label">
                   <span class="label-text"></span>
                 </label>
                 <label class="input-group py-8">
                   <span>Title Problem</span>
-                  <input type="text" placeholder="name" class="input input-bordered" />
+                  <input name="problem_title" type="text" placeholder="name" class="input input-bordered" />
                 </label>
             </label>
             <label class="input-group py-8">
               <span>Problem Content</span>
-              <input type="text" placeholder="content" class="input input-bordered input-lg w-full max-w-xs" />
+              <input name="problem_content" type="text" placeholder="content" class="input input-bordered input-lg w-full max-w-xs" />
               </div>
               <label class="input-group py-8">
                 <span>Solution</span>
-                <input type="text" placeholder="solution" class="input input-bordered" />
+                <input name="solutions" type="text" placeholder="solution" class="input input-bordered" />
               </label>
-              <form class="flex items-center space-x-6 py-8">
+              <div class="flex items-center space-x-6 py-8">
                 <div class="shrink-0">
                   <img class="h-16 w-16 object-cover rounded-full" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80" alt="Current profile photo" />
                 </div>
@@ -36,8 +37,8 @@
                     hover:file:bg-violet-100
                   "/>
                 </label>
+                <br><input class="btn mt-3" type="submit">
               </form>
-              <button class="btn btn-outline">Submit</button>
         </div>
     </div>
 @endsection

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('problem_title');
             $table->text('problem_content');
             $table->text('solutions');
-            $table->string('video_url');
+            $table->string('video_url')->nullable();
             $table->timestamps();
         });
     }
