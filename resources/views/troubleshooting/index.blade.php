@@ -35,7 +35,10 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-secondary" href="{{ route('troubleshooting.create') }} ">Add</a>
+            @if (Auth::user()->is_advisor == 1)
+                <a class="btn btn-secondary" href="{{ route('troubleshooting.create') }} ">Add</a>
+            @endif
+
 
         </div>
 

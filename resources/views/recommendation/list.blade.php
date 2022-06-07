@@ -70,7 +70,9 @@
 
                 </table>
             </div>
-            <a class="btn btn-primary m-10 " href="{{ route('recommendation.create') }} ">Add new product</a>
+            @if (Auth::user()->is_advisor == 1)
+                <a class="btn btn-primary m-10 " href="{{ route('recommendation.create') }} ">Add new product</a>
+            @endif
         </div>
 
     </div>

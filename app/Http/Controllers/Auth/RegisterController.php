@@ -13,7 +13,7 @@ class RegisterController extends Controller
     {
         $this->middleware(['guest']);
     }
-    
+
     public function index()
     {
         return view('auth.register');
@@ -38,6 +38,6 @@ class RegisterController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('dashboard');
+        return redirect()->route('home');
     }
 }

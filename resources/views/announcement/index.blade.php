@@ -5,7 +5,7 @@
         <div class="w-10/12 bg-white p-6 rounded-lg">
             <div class="overflow-x-auto">
                 <h2>Announcement</h2>
-                <a class="btn" href="{{ route('announcement.create') }}">Add</a>
+
                 @if ($announcements != null)
                     @foreach ($announcements as $announcement)
                         <table class="divide-y divide-slate-700 border-separate p-2 border border-slate-600"
@@ -20,6 +20,9 @@
                     @endforeach
                 @endif
             </div>
+            @if (Auth::user()->is_advisor == 1)
+                <a class="btn" href="{{ route('announcement.create') }}">Add</a>
+            @endif
         </div>
     </div>
 @endsection
