@@ -46,6 +46,7 @@ Route::get('/recommendation/list', [RecommendationController::class, 'list'])->n
 Route::get('/recommendation/create', [RecommendationController::class, 'create'])->name('recommendation.create');
 Route::get('/recommendation/{recommendation}', [RecommendationController::class, 'show'])->name('recommendation.show');
 Route::post('/recommendation', [RecommendationController::class, 'store'])->name('recommendation.store');
+Route::get('/recommendation/list/{category}/{usage}', [RecommendationController::class, 'list_usage_category'])->name('recommendation.list_usage_category');
 
 Route::get('/troubleshooting', [TroubleshootingController::class, 'index'])->name('troubleshooting');
 Route::get('/troubleshooting/create', [TroubleshootingController::class, 'create'])->name('troubleshooting.create');

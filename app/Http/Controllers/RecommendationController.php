@@ -23,6 +23,13 @@ class RecommendationController extends Controller
         return view('recommendation.list', compact('recommendations'));
     }
 
+
+    public function list_usage_category($category,$usage)
+    {
+        $recommendations= Recommendation::where('category', $category)->where('usage', $usage)->get();
+        // dd($recommendations);
+        return view('recommendation.list', compact('recommendations'));
+    }
     /**
      * Show the form for creating a new resource.
      *
