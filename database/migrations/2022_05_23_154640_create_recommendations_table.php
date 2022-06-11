@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text('description');
             $table->enum('category',['laptop','desktop']);
             $table->enum('usage',['work','gaming','multimedia']);
+            $table->text('name');
+            $table->text('brand');
             $table->timestamps();
         });
     }

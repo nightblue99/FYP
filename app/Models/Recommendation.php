@@ -15,7 +15,9 @@ class Recommendation extends Model
         'usage',
         'description',
         'image',
-        'category'
+        'category',
+        'name',
+        'brand'
     ];
 
     public function user()

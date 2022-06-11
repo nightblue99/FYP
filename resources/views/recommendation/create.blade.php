@@ -10,20 +10,20 @@
                     <label class="label">
                         <span class="label-text"></span>
                     </label>
-                    {{-- <label class="input-group py-8">
-                  <span>Name</span>
-                  <input name="name" type="text" placeholder="name" class="input input-bordered" />
-                </label> --}}
+                    <label class="input-group py-8">
+                        <span>Name</span>
+                        <input name="name" type="text" placeholder="Spec" class="input input-bordered" />
+                    </label>
                     </label>
                     <label class="input-group py-8">
                         <span>Description</span>
                         <input name="description" type="text" placeholder="Type here"
                             class="input input-bordered input-lg w-full max-w-xs" />
                 </div>
-                {{-- <label class="input-group py-8">
-                <span>Brand</span>
-                <input type="text" placeholder="brand" class="input input-bordered" />
-              </label> --}}
+                <label class="input-group py-8">
+                    <span>Brand</span>
+                    <input name="brand" type="text" placeholder="Spec" class="input input-bordered" />
+                </label>
                 <label class="input-group py-8">
                     <span>Spefication</span>
                     <input name="specification" type="text" placeholder="Spec" class="input input-bordered" />

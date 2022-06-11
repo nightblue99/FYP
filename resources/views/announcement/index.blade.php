@@ -14,7 +14,7 @@
                                 <td class="border border-slate-400">{{ $announcement->title }}</td>
                             </tr>
                             <tr class="h-24">
-                                <td class="border border-slate-400">{{ $announcement->content }}</td>
+                                <td class="border border-slate-400">{{ $announcement->content , $announcement->description }}</td>
                             </tr>
                         </table>
                     @endforeach

@@ -22,7 +22,7 @@
                 </div>
                 <label class="input-group py-8">
                     <span>Content </span>
-                    <input name="content" type="text" placeholder="Title" class="input input-bordered" />
+                    <input name="content" type="text" placeholder="content" class="input input-bordered" />
                 </label>
                 <div class="flex items-center space-x-6 py-8">
                     <div class="shrink-0">

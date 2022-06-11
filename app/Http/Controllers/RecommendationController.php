@@ -63,9 +63,11 @@ class RecommendationController extends Controller
             'image' => $request->image,
             'category' => $request->category,
             'usage' => $request->usage,
+            'name' => $request->name,
+            'brand' => $request->brand,
         ]);
 
-        return redirect()->route('recommendation.show', ['recommendation' => $recommendation]);
+        return redirect()->route('recommendation.list', ['recommendation' => $recommendation]);
     }
 
     /**

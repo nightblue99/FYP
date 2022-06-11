@@ -38,17 +38,17 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <div class="font-bold"> {{ $recommendation->description }}</div>
-                                                <div class="text-sm opacity-50">United States</div>
+                                                <div class="font-bold"> {{ $recommendation->name }}</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="font-bold"> {{ $recommendation->specification }}</div>
-                                        <br>
-                                        <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
+
                                     </td>
-                                    <td>Purple</td>
+                                    <td>
+                                        <div class="font-bold"> {{ $recommendation->brand }}</div>
+                                    </td>
                                     <th>
                                         <a class="btn btn-ghost btn-xs"
                                             href="{{ route('recommendation.show', ['recommendation' => 1]) }} ">details</a>
