@@ -52,6 +52,8 @@ Route::get('/troubleshooting', [TroubleshootingController::class, 'index'])->nam
 Route::get('/troubleshooting/create', [TroubleshootingController::class, 'create'])->name('troubleshooting.create');
 Route::get('/troubleshooting/{troubleshooting}', [TroubleshootingController::class, 'show'])->name('troubleshooting.show');
 Route::post('/troubleshooting', [TroubleshootingController::class, 'store'])->name('troubleshooting.store');
+Route::get('/troubleshooting/edit/{troubleshooting}', [TroubleshootingController::class, 'edit'])->name('troubleshooting.edit');
+Route::put('/troubleshooting/edit/{troubleshooting}', [TroubleshootingController::class, 'update'])->name('troubleshooting.update');
 
 Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement');
 Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create');

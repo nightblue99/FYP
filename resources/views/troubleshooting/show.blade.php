@@ -9,11 +9,15 @@
                 <div class="collapse-title text-xl font-medium">
                     Focus me to see content
                 </div>
+                {{-- @dd($troubleshooting) --}}
                 <div class="collapse-content">
-                    <p>{{ $troubleshooting->content }}</p>
-                    <p>{{ $troubleshooting->solutions }}</p>
+                    <p>{{ $troubleshooting->problem_content }} , {{ $troubleshooting->solutions }}</p>
                 </div>
             </div>
+            @if (Auth::user()->is_advisor == 1)
+                <a class="btn"
+                    href="{{ route('troubleshooting.edit', ['troubleshooting' => $troubleshooting]) }}">edit</a>
+            @endif
         </div>
     </div>
 @endsection

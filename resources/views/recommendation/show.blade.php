@@ -13,6 +13,7 @@
                     <p>{{ $recommendation->specification }}</p>
                 </div>
             </div>
+            <a class="btn btn-info px-20 m-10" href="{{ route('recommendation.list') }} "> Back</a>
         </div>
     </div>
 @endsection

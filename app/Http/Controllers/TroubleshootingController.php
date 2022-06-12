@@ -14,7 +14,8 @@ class TroubleshootingController extends Controller
      */
     public function index()
     {
-        return view('troubleshooting.index');
+        $troubleshootings= Troubleshooting::all();
+        return view('troubleshooting.index' , compact('troubleshootings'));
     }
 
     public function list()
@@ -59,6 +60,7 @@ class TroubleshootingController extends Controller
      */
     public function show($id)
     {
+        // dd($id);
         $troubleshooting= Troubleshooting::find($id);
         return view('troubleshooting.show',compact('troubleshooting'));
     }
@@ -71,7 +73,8 @@ class TroubleshootingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $troubleshooting= Troubleshooting::find($id);
+        return view('troubleshooting.edit',compact('troubleshooting'));
     }
 
     /**
@@ -81,9 +84,12 @@ class TroubleshootingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Troubleshooting $troubleshooting)
     {
-        //
+        $troubleshooting->solutions = $request->solutions;
+        $troubleshooting->save();
+
+        return redirect()->route('troubleshooting.show', ['troubleshooting' => $troubleshooting]);
     }
 
     /**

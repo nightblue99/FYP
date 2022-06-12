@@ -17,20 +17,20 @@
                                 <!-- Page content here -->
                                 <label for="my-drawer-4" class="drawer-button btn btn-primary">Choose Your Problem</label>
                             </div>
-                            <div class="drawer-side">
-                                <label for="my-drawer-4" class="drawer-overlay"></label>
-                                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                                    <!-- Sidebar content here -->
-                                    <li><a href="{{ route('troubleshooting.show', ['troubleshooting' => 1]) }}">Modem
-                                            Problem</a></li>
-                                    <li><a href="{{ route('troubleshooting.show', ['troubleshooting' => 1]) }}">Wifi
-                                            Problem</a></li>
-                                    <li><a href="{{ route('troubleshooting.show', ['troubleshooting' => 1]) }}">Overheating
-                                            Problem</a></li>
-                                    <li><a href="{{ route('troubleshooting.show', ['troubleshooting' => 1]) }}">Desktop
-                                            crashes Problem</a></li>
-                                </ul>
-                            </div>
+                            @if ($troubleshootings != null)
+                                {{-- @dd($troubleshootings) --}}
+                                <div class="drawer-side">
+                                    <label for="my-drawer-4" class="drawer-overlay"></label>
+                                    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                                        <!-- Sidebar content here -->
+                                        @foreach ($troubleshootings as $troubleshooting)
+                                            <li><a
+                                                    href="{{ route('troubleshooting.show', ['troubleshooting' => 1]) }}">{{ $troubleshooting->problem_title }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

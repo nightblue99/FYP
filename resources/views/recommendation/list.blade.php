@@ -43,7 +43,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="font-bold"> {{ $recommendation->specification }}</div>
+                                        <div class="text-ellipsis overflow-hidden ..."> {{ $recommendation->description }}</div>
 
                                     </td>
                                     <td>
