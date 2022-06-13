@@ -2298,33 +2298,6 @@ html {
   left: 0;
   z-index: 10;
 }
-.textarea {
-  flex-shrink: 1;
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-duration: .2s;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  font-size: .875rem;
-  line-height: 1.25rem;
-  line-height: 2;
-  min-height: 3rem;
-  border-width: 1px;
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 0;
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b1) / var(--tw-bg-opacity));
-  border-radius: var(--rounded-btn, .5rem);
-}
-.textarea:focus {
-  outline: 2px solid transparent;
-  outline: 2px solid hsla(var(--bc) / .2);
-  outline-offset: 2px;
-}
 .avatar-group .avatar {
   overflow: hidden;
   border-radius: 9999px;
@@ -3135,26 +3108,6 @@ html {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
 }
-.textarea-disabled,.textarea[disabled] {
-  cursor: not-allowed;
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--b2, var(--b1)) / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
-  --tw-text-opacity: 0.2;
-}
-.textarea-disabled::-moz-placeholder, .textarea[disabled]::-moz-placeholder {
-  --tw-placeholder-opacity: 0.2;
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-}
-.textarea-disabled:-ms-input-placeholder, .textarea[disabled]:-ms-input-placeholder {
-  --tw-placeholder-opacity: 0.2;
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-}
-.textarea-disabled::placeholder,.textarea[disabled]::placeholder {
-  --tw-placeholder-opacity: 0.2;
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-}
 .rounded-box {
   border-radius: var(--rounded-box, 1rem);
 }
@@ -3528,11 +3481,6 @@ html {
 .overflow-y-auto {
   overflow-y: auto;
 }
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .text-ellipsis {
   text-overflow: ellipsis;
 }
@@ -3691,6 +3639,10 @@ html {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -3711,10 +3663,6 @@ html {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -3731,21 +3679,6 @@ html {
 }
 .text-center {
   text-align: center;
-}
-.indent-8 {
-  text-indent: 2rem;
-}
-.indent-3 {
-  text-indent: 0.75rem;
-}
-.-indent-3 {
-  text-indent: -0.75rem;
-}
-.-indent-1 {
-  text-indent: -0.25rem;
-}
-.-indent-9 {
-  text-indent: -2.25rem;
 }
 .text-sm {
   font-size: 0.875rem;
