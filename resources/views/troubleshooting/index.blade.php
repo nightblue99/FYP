@@ -9,8 +9,7 @@
                 <div class="hero-content text-center">
                     <div class="max-w-md">
                         <h1 class="text-5xl font-bold">Troubleshooting</h1>
-                        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-                            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <p class="py-6">Find out more about some of the most common IT problems and solutions by reading helpful tips from the IT experts</p>
                         <div class="drawer drawer-end m-4">
                             <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
                             <div class="drawer-content">

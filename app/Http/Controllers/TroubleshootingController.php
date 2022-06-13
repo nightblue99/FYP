@@ -87,6 +87,7 @@ class TroubleshootingController extends Controller
     public function update(Request $request, Troubleshooting $troubleshooting)
     {
         $troubleshooting->solutions = $request->solutions;
+        $troubleshooting->problem_content = $request->problem_content;
         $troubleshooting->save();
 
         return redirect()->route('troubleshooting.show', ['troubleshooting' => $troubleshooting]);

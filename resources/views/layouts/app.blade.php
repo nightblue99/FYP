@@ -25,7 +25,7 @@
                 </li>
 
                  <li>
-                    <a href="{{ route('post') }}" class="p-3">Posts</a>
+                    <a href="{{ route('posts') }}" class="p-3">Posts</a>
                 </li>
             </ul>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -22,10 +23,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = Post::create([
-            'user_id' => 0,
+            'user_id' => Auth::user()->id,
             'post_title' => $request->post_title,
-            'post_content' => $request->problem_content,
-            'comment' => $request->comment,
+            'post_content' => $request->post_content,
         ]);
 
         return redirect()->route('posts');

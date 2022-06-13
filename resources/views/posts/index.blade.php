@@ -11,10 +11,10 @@
                         <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white">
                             <div class="flex w-full items-center justify-between border-b pb-3">
                                 <div class="flex items-center space-x-3">
-                                    <div class="text-lg font-bold text-slate-700">Joe Smith</div>
+                                    <div class="text-lg font-bold text-slate-700">{{$post->user->username}}</div>
                                 </div>
                                 <div class="flex items-center space-x-8">
-                                    <div class="text-xs text-neutral-500">2 hours ago</div>
+                                    <div class="text-xs text-neutral-500">{{$post->created_at}}</div>
                                 </div>
                             </div>
 
@@ -41,9 +41,7 @@
                     </div>
                 @endforeach
             @endif
+            <a class="btn" href="{{ route('posts.create') }} ">Add</a>
         </div>
-         {{-- @if (Auth::user()->is_advisor == 1) --}}
-         <a class="btn" href="{{ route('posts.create') }} ">Add</a>
-         {{-- @endif --}}
     </div>
 @endsection

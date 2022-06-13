@@ -15,6 +15,10 @@
                     <span>Solution</span>
                     <input name="solutions" type="text" placeholder="solution" class="input input-bordered" />
                 </label>
+                <label class="input-group py-8">
+                    <span>Content</span>
+                    <input name="problem_content" type="text" placeholder="solution" class="input input-bordered" />
+                </label>
                     <br><input class="btn mt-3" type="submit">
             </form>
         </div>
