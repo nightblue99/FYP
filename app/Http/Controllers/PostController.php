@@ -2,49 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth'])->only(['store', 'destroy']);
-    }
-    
     public function index()
     {
-        $posts = Post::latest()->with(['user', 'likes'])->paginate(20);
-
-        return view('posts.index', [
-            'posts' => $posts
-        ]);
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 
-    public function show(Post $post)
+    public function create()
     {
-        return view('posts.show', [
-            'post' => $post
-        ]);
+        return view('posts.create');
     }
+
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'body' => 'required'
+        $post = Post::create([
+            'user_id' => 0,
+            'post_title' => $request->post_title,
+            'post_content' => $request->problem_content,
+            'comment' => $request->comment,
         ]);
 
-        $request->user()->posts()->create($request->only('body'));
-
-        return back();
-    }
-
-    public function destroy(Post $post)
-    {
-        $this->authorize('delete', $post);
-
-        $post->delete();
-
-        return back();
+        return redirect()->route('posts');
     }
 }
