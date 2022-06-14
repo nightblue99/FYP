@@ -51,7 +51,7 @@
                                     </td>
                                     <th>
                                         <a class="btn btn-ghost btn-xs"
-                                            href="{{ route('recommendation.show', ['recommendation' => 1]) }} ">details</a>
+                                            href="{{ route('recommendation.show', ['recommendation' => $recommendation]) }} ">details</a>
                                     </th>
                                 </tr>
                             @endforeach

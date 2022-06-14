@@ -24,7 +24,7 @@
                                         <!-- Sidebar content here -->
                                         @foreach ($troubleshootings as $troubleshooting)
                                             <li><a
-                                                    href="{{ route('troubleshooting.show', ['troubleshooting' => 1]) }}">{{ $troubleshooting->problem_title }}</a>
+                                                    href="{{ route('troubleshooting.show', ['troubleshooting' => $troubleshooting]) }}">{{ $troubleshooting->problem_title }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
