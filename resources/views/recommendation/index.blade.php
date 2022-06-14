@@ -37,7 +37,7 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title">Choose Usage!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>Using for?</p>
                         <div class="card-actions justify-end">
                             <select class="select select-bordered w-full max-w-xs">
                                 <option disabled selected>Choose Your usage?</option>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title">Choose Category!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>Laptop OR Desktop?</p>
                         <div class="card-actions justify-end">
                             <select class="select select-bordered w-full max-w-xs">
                                 <option disabled selected>Choose Your Category?</option>
